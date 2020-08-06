@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Deploying Ansible') {
             steps {
-                "ansible-playbook /home/ubuntu/ansible-lives/playbook-ec2.yml --extra-vars='nameinvault=${params.NAMEINST}'"
+                sh "ansible-playbook /home/ubuntu/ansible-lives/playbook-ec2.yml --extra-vars='nameinvault=$params.NAMEINST'"
             }
         }
     }
